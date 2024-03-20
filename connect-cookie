@@ -8,5 +8,5 @@ fi
 url=$1
 cookie=$2
 
-docker run --rm -i --name openconnect --cap-add=NET_ADMIN $(docker build -q .) -C "webvpn=$2" "$1"
+docker run --rm -i -p 1080:1080 --name openconnect --cap-add=NET_ADMIN $(docker build -q .) -C "webvpn=$2" "$1"
 
